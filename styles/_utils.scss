@@ -1,0 +1,67 @@
+$primary: #333333;
+$contrast: #d4bd53;
+$secondary: #aaaaaa;
+$white: #ffffff;
+
+@mixin colors($background, $color) {
+  background: $background;
+  color: $color;
+}
+
+@mixin fontSize($sizeValue) {
+  font-size: $sizeValue * 1px;
+  font-size: $sizeValue/10 * 1rem;
+}
+
+@mixin position($top, $right, $bottom, $left) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+.wrap90 {
+  width: 90%;
+  margin: 0 auto;
+}
+.wrap60 {
+  width: 60%;
+  margin: 0 auto;
+  @media (max-width: 560px) {
+    width: 90%;
+  }
+}
+
+/* from https://www.w3.org/WAI/tutorials/forms/labels/#note-on-hiding-elements */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+// .skip-link {
+//   position: absolute;
+//   left: -1000px;
+//   top: 5px;
+//   z-index: 999;
+//   background: black;
+//   color: white;
+//   @include fontSize(20);
+// }
+// .skip-link:focus {
+//   left: 0;
+// }
+//       & input[id="shop-toggle"] {
+//         display: none;
+//       }
+//       & input[id="shop-toggle"]:checked + .header__nav__list__shop__dropdown {
+//         display: block !important;
+//       }

@@ -1,0 +1,31 @@
+* {
+  font-size: 62.5%;
+}
+body,
+p,
+ul,
+li,
+a,
+div,
+.header-p {
+  font-family: "Raleway", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", sans-serif;
+}
+h1 {
+  @include fontSize(100);
+  font-weight: 300;
+  margin: 0;
+}
+
+.header-p {
+  @include fontSize(24);
+  font-style: italic;
+  margin-top: 6rem;
+}
