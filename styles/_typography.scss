@@ -22,10 +22,28 @@ h1 {
   @include fontSize(100);
   font-weight: 300;
   margin: 0;
+  text-transform: uppercase;
 }
 
 .header-p {
   @include fontSize(24);
+
   font-style: italic;
   margin-top: 6rem;
+}
+
+.section__guide__list,
+.section__ideas li {
+  @include fontSize(20);
+  line-height: 30px;
+  font-style: italic;
+}
+input[type="text"] {
+  @include fontSize(17);
+  line-height: 30px;
+  font-style: italic;
+}
+button[type="submit"] i {
+  @include fontSize(20);
+  line-height: 30px;
 }

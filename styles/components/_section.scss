@@ -1,0 +1,81 @@
+.section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  position: relative;
+  &__guide {
+    padding-top: 10vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    &__list {
+      width: 100%;
+      padding: 0;
+      & li {
+        list-style-type: none;
+      }
+    }
+    & > form {
+      width: 100%;
+      display: flex;
+      position: relative;
+      & input[type="text"] {
+        width: 100%;
+        padding: 0.4rem 5rem 0.4rem 1rem;
+        position: relative;
+      }
+      & button[type="submit"] {
+        background: white;
+        border: 0;
+        position: absolute;
+        right: 1rem;
+        top: 0.5rem;
+        transition: transform 0.2s ease;
+        color: #555;
+        & img {
+          height: 26px;
+          transform: translateY(3px);
+        }
+        &:hover {
+          transform: scale(1.1) rotate(12deg) translateY(1px);
+          color: black;
+        }
+      }
+    }
+  }
+  &__ideas {
+    margin-top: 5rem;
+    padding: 0;
+    & li {
+      list-style-type: circle;
+      width: 100%;
+      position: relative;
+      padding: 0.3rem 5rem 0.3rem 1rem;
+      & button {
+        background: white;
+        border: 0;
+        position: absolute;
+        right: 1rem;
+        top: 0;
+        & img {
+          height: 26px;
+        }
+      }
+    }
+  }
+  &__button-next {
+    text-align: right;
+    position: absolute;
+    bottom: 10vh;
+    right: 20%;
+    & a {
+      color: black;
+    }
+  }
+}
+.section-s {
+  display: none;
+}
