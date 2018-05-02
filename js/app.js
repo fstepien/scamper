@@ -1,7 +1,17 @@
 $(function() {
-  $(".lets-start").on("click", function() {
-    $(".section-s").css("display", "flex");
-  });
+  //  by default sections are hidden, display: flex on click if linking to section
+  // + smooth scroll.
+  $("a")
+    .on("click", function(e) {
+      nextSection = $(this).attr("href");
+      console.log(nextSection);
+      if (/^#section/.test(nextSection)) {
+        $(nextSection).css("display", "flex");
+      }
+    })
+    .smoothScroll({
+      speed: 900
+    });
 
   //  add idea to corresponding section
   const addIdea = function(e) {
@@ -15,24 +25,23 @@ $(function() {
     storeInLocalStorage(inputValue);
   };
   // store in local storage
-  const storeInLocalStorage = function(idea) {
+  const checkLocalStorage = function() {
     let ideas;
     if (localStorage.getItem("ideas") === null) {
-      ideas = [];
+      return (ideas = []);
     } else {
-      ideas = JSON.parse(localStorage.getItem("ideas"));
+      return (ideas = JSON.parse(localStorage.getItem("ideas")));
     }
+  };
+
+  const storeInLocalStorage = function(idea) {
+    let ideas = checkLocalStorage();
     ideas.push(idea);
     localStorage.setItem("ideas", JSON.stringify(ideas));
   };
   //retrieve local storage
   const loadIdeas = function() {
-    let ideas;
-    if (localStorage.getItem("ideas") === null) {
-      ideas = [];
-    } else {
-      ideas = JSON.parse(localStorage.getItem("ideas"));
-    }
+    let ideas = checkLocalStorage();
     ideas.forEach(idea => {
       const listItem = `<li>${idea}<button><img src="assets/garbage.svg" alt="move to trash icon"></button></li>`;
       //   $(`ul[data-section="list-${section}"]`).append(listItem);
@@ -47,11 +56,7 @@ $(function() {
     // remove single idea from ui
     confirm("Are you sure?") ? ideaTarget.remove() : "";
     // check local storage, remove specific item by index then reset local storage
-    if (localStorage.getItem("ideas") === null) {
-      ideas = [];
-    } else {
-      ideas = JSON.parse(localStorage.getItem("ideas"));
-    }
+    let ideas = checkLocalStorage();
     const index = ideas.findIndex(idea => idea === ideaText);
     ideas.splice(index, 1);
     localStorage.setItem("ideas", JSON.stringify(ideas));
@@ -74,10 +79,4 @@ $(function() {
   $("form").on("submit", addIdea);
   $("ul").on("click", "button", removeIdea);
   $(".remove-all").on("click", clearAllIdeas);
-
-  //   smooth scroll code for all links
-  $("a").smoothScroll({
-    speed: 900
-    // offset: -120
-  });
 });
