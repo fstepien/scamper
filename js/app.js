@@ -40,37 +40,27 @@ $(function() {
     });
   };
 
-  // remove single idea
   const removeIdea = function(e) {
     e.stopPropagation();
-    ideaTarget = $(this).parent();
+    ideaTarget = $(this).parent()[0];
+    ideaText = ideaTarget.innerHTML.match(/[^<]*/)[0];
+    // remove single idea from ui
     confirm("Are you sure?") ? ideaTarget.remove() : "";
-    removeFromLocalStorage(ideaTarget);
-  };
-
-  const removeFromLocalStorage = function(ideaTarget) {
-    console.log(ideaTarget);
+    // check local storage, remove specific item by index then reset local storage
     if (localStorage.getItem("ideas") === null) {
       ideas = [];
     } else {
       ideas = JSON.parse(localStorage.getItem("ideas"));
     }
-    console.log(ideas);
-    // 1 Loop through ideas
-    // 2. filter to find key of array and splice out
-    // 3. return the rest to LS
-    // ideas.forEach(idea => {
-    //   ideaTarget.textContent === idea ? task.splice(index, 1) : "";
-    // });
-    // localStorage.setItem("ideas", JSON.stringify(ideas));
+    const index = ideas.findIndex(idea => idea === ideaText);
+    ideas.splice(index, 1);
+    localStorage.setItem("ideas", JSON.stringify(ideas));
   };
 
   //clear All ideas from all sections
   const clearAllIdeas = function() {
     if (confirm("Are you sure?")) {
-      // $(".section__ideas");
-      // HOW TO USE A jQUERY SELECTOR___ FIX ME FIX ME!!!!
-      document.querySelectorAll(".section__ideas").forEach(section => {
+      $(".section__ideas").each((i, section) => {
         while (section.firstChild) {
           section.removeChild(section.firstChild);
         }
