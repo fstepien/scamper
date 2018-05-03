@@ -20,7 +20,7 @@
         <div class="main-header__text wrap60">
             <p class="header-p">A brainstorming tool to improve a product, service or an idea by asking guided questions on how to Substitute,
                 Combine, Adapt, Modify, Put to other uses, Eliminate, Rearrange</p>
-            <a href="#section-s" class="link lets-start">Let's Start</a>
+            <a href="#section-s" class="a-tag lets-start">Let's Start</a>
         </div>
     </header>
     <section class="scamper-map">
@@ -48,7 +48,7 @@
         </ul>
 
         <div class="section__button-next">
-            <a href="#section-c" class="link lets-start">Move on to Combine</a>
+            <a href="#section-c" class="a-tag lets-start">Move on to Combine</a>
         </div>
     </section>
     <section class="section-c section" id="section-c">
@@ -74,17 +74,158 @@
         </ul>
 
         <div class="section__button-next">
-            <a href="#section-a" class="link lets-start">Move on to Adapt</a>
+            <a href="#section-a" class="a-tag lets-start">Move on to Adapt</a>
+        </div>
+    </section>
+    <section class="section-a section" id="section-a">
+        <div class="section__guide wrap60">
+            <h1 class="section__guide__h1">Adapt</h1>
+            <p class="section__guide__list">
+                How could you adapt or readjust this product to serve another purpose or use? What else is the product like? Who or what
+                could you emulate to adapt this product? What else is like your product? What other context could you put
+                your product into? What other products or ideas could you use for inspiration?
+            </p>
+            <form data-section="adapt">
+                <label for="adapt" class="visuallyhidden">Enter Idea for Modify: </label>
+                <input type="text" placeholder="add idea" id="adapt" name="adapt" required>
+                <button type="submit">
+                    <img src="assets/idea.svg" alt="Idea Lightbulb">
+                </button>
+
+            </form>
+        </div>
+
+        <ul data-section="list-adapt" class="section__ideas section__ideas--c wrap60">
+
+        </ul>
+
+        <div class="section__button-next">
+            <a href="#section-m" class="a-tag lets-start">Move on to Modify</a>
+        </div>
+    </section>
+    <section class="section-m section" id="section-m">
+        <div class="section__guide wrap60">
+            <h1 class="section__guide__h1">Modify</h1>
+            <p class="section__guide__list">
+                How could you change the shape, look, or feel of your product? What could you add to modify this product? What could you
+                emphasize or highlight to create more value? What element of this product could you strengthen to create
+                something new?
+            </p>
+            <form data-section="modify">
+                <label for="modify" class="visuallyhidden">Enter Idea for Modify: </label>
+                <input type="text" placeholder="add idea" id="modify" name="modify" required>
+                <button type="submit">
+                    <img src="assets/idea.svg" alt="Idea Lightbulb">
+                </button>
+
+            </form>
+        </div>
+
+        <ul data-section="list-modify" class="section__ideas section__ideas--m wrap60">
+
+        </ul>
+
+        <div class="section__button-next">
+            <a href="#section-p" class="a-tag lets-start">Move on to Purpose</a>
+        </div>
+    </section>
+    <section class="section-p section" id="section-p">
+        <div class="section__guide wrap60">
+            <h1 class="section__guide__h1">Purpose</h1>
+            <p class="section__guide__list">
+                Can you use this product somewhere else, perhaps in another industry? Who else could use this product? How would this product
+                behave differently in another setting? Could you recycle the waste from this product to make something new?
+            </p>
+            <form data-section="put">
+                <label for="put" class="visuallyhidden">Enter Idea for Purpose: </label>
+                <input type="text" placeholder="add idea" id="put" name="put" required>
+                <button type="submit">
+                    <img src="assets/idea.svg" alt="Idea Lightbulb">
+                </button>
+
+            </form>
+        </div>
+
+        <ul data-section="list-put" class="section__ideas section__ideas--p wrap60">
+
+        </ul>
+
+        <div class="section__button-next">
+            <a href="#section-e" class="a-tag lets-start">Move on to Eliminate</a>
+        </div>
+    </section>
+    <section class="section-e section" id="section-e">
+        <div class="section__guide wrap60">
+            <h1 class="section__guide__h1">Eliminate</h1>
+            <p class="section__guide__list">
+                How could you streamline or simplify this product? What features, parts, or rules could you eliminate? What could you understate
+                or tone down? How could you make it smaller, faster, lighter, or more fun? What would happen if you took
+                away part of this product? What would you have in its place?
+            </p>
+            <form data-section="eliminate">
+                <label for="eliminate" class="visuallyhidden">Enter Idea for Purpose: </label>
+                <input type="text" placeholder="add idea" id="eliminate" name="eliminate" required>
+                <button type="submit">
+                    <img src="assets/idea.svg" alt="Idea Lightbulb">
+                </button>
+
+            </form>
+        </div>
+
+        <ul data-section="list-eliminate" class="section__ideas section__ideas--p wrap60">
+
+        </ul>
+
+        <div class="section__button-next">
+            <a href="#section-r" class="a-tag lets-start">Move on to Rearrange</a>
+        </div>
+    </section>
+    <section class="section-r section" id="section-r">
+        <div class="section__guide wrap60">
+            <h1 class="section__guide__h1">rearrange</h1>
+            <p class="section__guide__list">
+                What would happen if you reversed this process or sequenced things differently? What if you try to do the exact opposite
+                of what you're trying to do now? What components could you substitute to change the order of this product?
+                What roles could you reverse or swap? How could you reorganize this product?
+            </p>
+            <form data-section="rearrange">
+                <label for="rearrange" class="visuallyhidden">Enter Idea for Purpose: </label>
+                <input type="text" placeholder="add idea" id="rearrange" name="rearrange" required>
+                <button type="submit">
+                    <img src="assets/idea.svg" alt="Idea Lightbulb">
+                </button>
+
+            </form>
+        </div>
+
+        <ul data-section="list-rearrange" class="section__ideas section__ideas--p wrap60">
+
+        </ul>
+
+        <div class="section__button-next">
+            <a href="#tree-diagram" class="a-tag draw-tree">Let's Review!!!</a>
+        </div>
+    </section>
+    <section id="tree-diagram" class="tree-diagram">
+        <div class="tree-diagram__guide wrap60">
+            <h1 class="tree-diagram__h1">SCAMPER</h1>
+        </div>
+
+        <div class="tree-diagram-canvas">
+
         </div>
     </section>
     <section class="utilities">
-        <button class="remove-all link">Remove All</button>
+        <button class="remove-all a-tag">Remove All</button>
     </section>
+
+
+
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.1.2/jquery.smooth-scroll.min.js"></script>
-<script src="js/app.js">
-
-</script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="js/tree.js"></script>
+<script src="js/app.js"></script>
 
 </html>

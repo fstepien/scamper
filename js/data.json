@@ -1,0 +1,41 @@
+{
+  "name": "scamper",
+  "parent": "null",
+  "children": [
+    {
+      "name": "substitute",
+      "parent": "scamper",
+      "children": [{ "name": "sub idea 2", "parent": "substitute" }]
+    },
+    {
+      "name": "combine",
+      "parent": "scamper",
+      "children": [{ "name": "comb idea 1", "parent": "combine" }]
+    },
+    {
+      "name": "adapt",
+      "parent": "scamper",
+      "children": [{ "name": "adapt idea 2", "parent": "adapt" }]
+    },
+    {
+      "name": "modify",
+      "parent": "scamper",
+      "children": [{ "name": "mod idea 2", "parent": "modify" }]
+    },
+    {
+      "name": "put",
+      "parent": "scamper",
+      "children": [{ "name": "purp idea 2", "parent": "put" }]
+    },
+    {
+      "name": "eliminate",
+      "parent": "scamper",
+      "children": [{ "name": "elim idea 2", "parent": "eliminate" }]
+    },
+    {
+      "name": "rearrange",
+      "parent": "scamper",
+      "children": [{ "name": "rear idea 2", "parent": "rearrange" }]
+    }
+  ]
+}

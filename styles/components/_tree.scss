@@ -1,0 +1,33 @@
+.tree-diagram {
+  min-height: 300vh;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  position: relative;
+  &__guide {
+    padding-top: 10vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.tree-diagram-canvas {
+  height: 250vh;
+  width: 100%;
+  background: #888;
+}
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 3px;
+}
+.node text {
+  font: 12px sans-serif;
+}
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}

@@ -1,18 +1,4 @@
 $(function() {
-  //  by default sections are hidden, display: flex on click if linking to section
-  // + smooth scroll.
-  $("a")
-    .on("click", function(e) {
-      nextSection = $(this).attr("href");
-      console.log(nextSection);
-      if (/^#section/.test(nextSection)) {
-        $(nextSection).css("display", "flex");
-      }
-    })
-    .smoothScroll({
-      speed: 900
-    });
-
   //  add idea to corresponding UI section and LS
   const addIdea = function(e) {
     e.preventDefault();
@@ -137,4 +123,19 @@ $(function() {
   $("form").on("submit", addIdea);
   $("ul").on("click", "button", removeIdea);
   $(".remove-all").on("click", clearAllIdeas);
+  //   $(".draw-tree").on("click", drawTree);
+  $("a")
+    .on("click", function(e) {
+      nextSection = $(this).attr("href");
+      if (/^#section/.test(nextSection)) {
+        $(nextSection).css("display", "flex");
+      }
+    })
+    .smoothScroll({
+      speed: 900
+    });
 });
+
+document.querySelector(".draw-tree").addEventListener("click", drawTree);
+// remove after testing
+drawTree();
