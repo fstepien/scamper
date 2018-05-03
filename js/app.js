@@ -84,18 +84,13 @@ $(function() {
     localStorage.setItem("ideas", JSON.stringify(ideas));
   };
 
-  //retrieve local storage
+  //on page load retrieve local storage and display on page
   const loadIdeas = function() {
     let ideas = checkLocalStorage();
-    // The code below is a type error because it is no longer an aray now we need to loop through object
-    // NEXT THING TO DO IS TO PULL AND PUSH IDEAS FOR NEW ARRAYS
-    console.log(ideas);
-    console.log(ideas.children);
     ideas.children.forEach(section => {
       const sectionName = section.name;
-
       section.children.forEach(idea => {
-        const listItem = `<li>${
+        const listItem = `<li data-section="${sectionName}">${
           idea.name
         }<button><img src="assets/garbage.svg" alt="move to trash icon"></button></li>`;
         $(`ul[data-section="list-${sectionName}"]`).append(listItem);
@@ -107,12 +102,21 @@ $(function() {
     e.stopPropagation();
     ideaTarget = $(this).parent()[0];
     ideaText = ideaTarget.innerHTML.match(/[^<]*/)[0];
+    ideaSection = $(this)
+      .parent()
+      .attr("data-section");
     // remove single idea from ui
     confirm("Are you sure?") ? ideaTarget.remove() : "";
-    // check local storage, remove specific item by index then reset local storage ---NOT CHANGED TO NEW FORMAT!!!
+    // find where this idea lives in the data and splice it out
     let ideas = checkLocalStorage();
-    const index = ideas.findIndex(idea => idea === ideaText);
-    ideas.splice(index, 1);
+    sectionIndex = ideas.children.findIndex(
+      section => section.name === ideaSection
+    );
+    ideaIndex = ideas.children[sectionIndex].children.findIndex(
+      idea => idea.name === ideaText
+    );
+    ideas.children[sectionIndex].children.splice(ideaIndex, 1);
+    // return ideas back to local storage
     localStorage.setItem("ideas", JSON.stringify(ideas));
   };
 
