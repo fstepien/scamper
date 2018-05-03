@@ -13,7 +13,7 @@ $(function() {
       speed: 900
     });
 
-  //  add idea to corresponding section ---NOT CHANGED TO NEW FORMAT!!!
+  //  add idea to corresponding UI section and LS
   const addIdea = function(e) {
     e.preventDefault();
     const section = $(this).attr("data-section");
@@ -83,6 +83,7 @@ $(function() {
     ideas.children[sectionIndex].children.push({ name: idea, parent: section });
     localStorage.setItem("ideas", JSON.stringify(ideas));
   };
+
   //retrieve local storage
   const loadIdeas = function() {
     let ideas = checkLocalStorage();
@@ -92,11 +93,13 @@ $(function() {
     console.log(ideas.children);
     ideas.children.forEach(section => {
       const sectionName = section.name;
-      console.log(sectionName);
-      // ---NOT CHANGED TO NEW FORMAT!!!
-      //   const listItem = `<li>${idea}<button><img src="assets/garbage.svg" alt="move to trash icon"></button></li>`;
-      //   //   $(`ul[data-section="list-${section}"]`).append(listItem);
-      //   $(`ul[data-section="list-substitute"]`).append(listItem);
+
+      section.children.forEach(idea => {
+        const listItem = `<li>${
+          idea.name
+        }<button><img src="assets/garbage.svg" alt="move to trash icon"></button></li>`;
+        $(`ul[data-section="list-${sectionName}"]`).append(listItem);
+      });
     });
   };
 
