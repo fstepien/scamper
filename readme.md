@@ -23,7 +23,7 @@ ideas = {
         ]
 ```
 
-![https://scamper.filipstepien.com/assets/localstorage.png]()
+![](https://scamper.filipstepien.com/assets/localstorage.png)
 
 Once the structure was created "ideas" can be pushed into the children array of respective scamper section objects. Removing "ideas" is slightly trickier as it involves looping through first the section then the ideas to find a match. The following code is used to remove from local storage: 
 
