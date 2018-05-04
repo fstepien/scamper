@@ -47,3 +47,9 @@ button[type="submit"] i {
   @include fontSize(20);
   line-height: 30px;
 }
+.node text {
+  font-family: "Raleway", sans-serif;
+  @include fontSize(24);
+  color: red;
+  transform: translateX(2rem);
+}

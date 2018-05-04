@@ -1,15 +1,4 @@
 $(function() {
-  //  add idea to corresponding UI section and LS
-  const addIdea = function(e) {
-    e.preventDefault();
-    const section = $(this).attr("data-section");
-    const $input = $(`input[name=${section}]`);
-    const inputValue = $input.val();
-    $input.val("");
-    const listItem = `<li>${inputValue}<button><img src="assets/garbage.svg" alt="move to trash icon"></button></li>`;
-    $(`ul[data-section="list-${section}"]`).append(listItem);
-    storeInLocalStorage(section, inputValue);
-  };
   // store in local storage
   const checkLocalStorage = function() {
     let ideas;
@@ -60,9 +49,20 @@ $(function() {
     }
   };
 
+  //  add idea to corresponding UI section and LS
+  const addIdea = function(e) {
+    e.preventDefault();
+    const section = $(this).attr("data-section");
+    const $input = $(`input[name=${section}]`);
+    const inputValue = $input.val();
+    $input.val("");
+    const listItem = `<li data-section="${section}">${inputValue}<button><img src="assets/garbage.svg" alt="move to trash icon"></button></li>`;
+    $(`ul[data-section="list-${section}"]`).append(listItem);
+    storeInLocalStorage(section, inputValue);
+  };
+
   const storeInLocalStorage = function(section, idea) {
     let ideas = checkLocalStorage();
-    console.log(section, idea);
     const sectionIndex = ideas.children.findIndex(
       child => child.name === section
     );
@@ -95,10 +95,10 @@ $(function() {
     confirm("Are you sure?") ? ideaTarget.remove() : "";
     // find where this idea lives in the data and splice it out
     let ideas = checkLocalStorage();
-    sectionIndex = ideas.children.findIndex(
+    const sectionIndex = ideas.children.findIndex(
       section => section.name === ideaSection
     );
-    ideaIndex = ideas.children[sectionIndex].children.findIndex(
+    const ideaIndex = ideas.children[sectionIndex].children.findIndex(
       idea => idea.name === ideaText
     );
     ideas.children[sectionIndex].children.splice(ideaIndex, 1);
@@ -138,4 +138,4 @@ $(function() {
 
 document.querySelector(".draw-tree").addEventListener("click", drawTree);
 // remove after testing
-drawTree();
+// drawTree();

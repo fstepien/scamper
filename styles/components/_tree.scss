@@ -1,5 +1,5 @@
 .tree-diagram {
-  min-height: 300vh;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   flex-flow: column nowrap;
@@ -14,20 +14,22 @@
   }
 }
 .tree-diagram-canvas {
-  height: 250vh;
+  height: calc(100vh - 332px);
   width: 100%;
-  background: #888;
+  border: 1px red solid;
 }
 .node circle {
-  fill: #fff;
-  stroke: steelblue;
-  stroke-width: 3px;
+  fill: white;
+  stroke: black;
+  stroke-width: 2px;
+  z-index: 10;
+  position: relative;
 }
-.node text {
-  font: 12px sans-serif;
-}
+
 .link {
   fill: none;
-  stroke: #ccc;
-  stroke-width: 2px;
+  stroke: black;
+  stroke-width: 1px;
+  z-index: 0;
+  position: relative;
 }
