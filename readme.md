@@ -60,5 +60,6 @@ Once the structure was created "ideas" can be pushed into the children array of 
 The code uses [jQuery Library](https://jquery.com/) and [Smooth Scroll PlugIn](https://plugins.jquery.com/smooth-scroll/)
 
 There are many similarities in writting jQuery and D3, making it simple to apply powerful visualization functions. I recommend the following resources to get started: 
++ [d3 API reference page](https://github.com/d3/d3/blob/master/API.md)
 + [d3Vienno (YouTube)](https://www.youtube.com/user/d3Vienno)
 + [*D3 Tips and Tricks v3.x* by Macolm Maclean (Leanpub)](https://leanpub.com/D3-Tips-and-Tricks)

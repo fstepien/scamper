@@ -1,4 +1,10 @@
 $(function() {
+  let tree = false;
+
+  const treeTrue = function() {
+    tree = true;
+  };
+
   // store in local storage
   const checkLocalStorage = function() {
     let ideas;
@@ -59,6 +65,7 @@ $(function() {
     const listItem = `<li data-section="${section}">${inputValue}<button><img src="assets/garbage.svg" alt="move to trash icon"></button></li>`;
     $(`ul[data-section="list-${section}"]`).append(listItem);
     storeInLocalStorage(section, inputValue);
+    tree ? drawTree() : "";
   };
 
   const storeInLocalStorage = function(section, idea) {
@@ -122,8 +129,16 @@ $(function() {
   loadIdeas();
   $("form").on("submit", addIdea);
   $("ul").on("click", "button", removeIdea);
-  $(".remove-all").on("click", clearAllIdeas);
-  //   $(".draw-tree").on("click", drawTree);
+  $(".remove-all").on("click", function() {
+    clearAllIdeas();
+    d3.select("svg").remove();
+  });
+  $(".draw-tree").on("click", function() {
+    drawTree();
+    console.log(tree);
+    treeTrue();
+    console.log(tree);
+  });
   $("a")
     .on("click", function(e) {
       nextSection = $(this).attr("href");
@@ -136,6 +151,6 @@ $(function() {
     });
 });
 
-document.querySelector(".draw-tree").addEventListener("click", drawTree);
+// document.querySelector(".draw-tree").addEventListener("click", drawTree);
 // remove after testing
 // drawTree();

@@ -67,10 +67,8 @@
     }
   }
   &__button-next {
-    text-align: right;
-    position: absolute;
-    bottom: 10vh;
-    right: 20%;
+    text-align: center;
+    margin-top: 100px;
     & a {
       color: black;
     }

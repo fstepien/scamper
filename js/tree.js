@@ -1,7 +1,11 @@
 const drawTree = function() {
   const data = JSON.parse(localStorage.getItem("ideas"));
+  if (data === null) {
+    return alert("Please input your ideas before mapping");
+  }
   // display tree data in .tree-diagram-canvas which will be the canvas
-
+  //   removes any existing svg
+  d3.select("svg").remove();
   const canvas = d3
     .select(".tree-diagram-canvas")
     .append("svg")
@@ -18,13 +22,21 @@ const drawTree = function() {
 
   const tree = d3.layout.tree().size([canvasHeight, 300]);
 
-  // currently importing from data not localstorage
-  //   d3.json("js/data.json", function(data) {
-  console.log(data);
   //   runs tree layout and returns array of objects
   const nodes = tree.nodes(data);
   // links create source and target from nodes
   const links = tree.links(nodes);
+  //   d data for lines connecting nodes
+  const diagonal = d3.svg.diagonal().projection(d => [d.y, d.x]);
+  //REARANGED so that diagonals are below the circle nodes, diagonals must be created first - but need data/links to exist to be drawn out
+  canvas
+    .selectAll(".link")
+    .data(links)
+    .enter()
+    .append("path")
+    .attr("class", "link")
+    .attr("d", diagonal);
+
   // .node does not exist so we need to enter(), create placehoder, bind data to it then name it
   const node = canvas
     .selectAll(".node")
@@ -36,19 +48,7 @@ const drawTree = function() {
       return `translate(${data.y},${data.x})`;
     });
 
-  node.append("circle").attr("r", 5);
-
   node.append("text").text(d => d.name);
 
-  //   d data for lines connecting nodes
-  const diagonal = d3.svg.diagonal().projection(d => [d.y, d.x]);
-
-  canvas
-    .selectAll(".link")
-    .data(links)
-    .enter()
-    .append("path")
-    .attr("class", "link")
-    .attr("d", diagonal);
-  //   });
+  node.append("circle").attr("r", 5);
 };
