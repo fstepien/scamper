@@ -11,6 +11,7 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+
     &__list {
       width: 100%;
       padding: 0;
@@ -36,11 +37,11 @@
         transition: transform 0.2s ease;
         color: #555;
         & img {
-          height: 26px;
+          height: 25px;
           transform: translateY(3px);
         }
         &:hover {
-          transform: scale(1.1) rotate(12deg) translateY(1px);
+          transform: scale(1.1);
           color: black;
         }
       }
@@ -65,12 +66,22 @@
         }
       }
     }
+    @media (max-width: 700px) {
+      margin-top: 1rem;
+      padding-left: 0.6rem;
+      & li {
+        padding-left: 0;
+      }
+    }
   }
   &__button-next {
     text-align: center;
     margin-top: 100px;
     & a {
       color: black;
+    }
+    @media (max-width: 700px) {
+      margin-top: 1rem;
     }
   }
 }

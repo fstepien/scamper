@@ -23,13 +23,62 @@ h1 {
   font-weight: 300;
   margin: 0;
   text-transform: uppercase;
+  @media (max-width: 700px) {
+    font-size: calc(3rem + 6vw);
+  }
 }
+h2 {
+  @include fontSize(30);
+  font-weight: 400;
+  margin: 0;
+  text-transform: uppercase;
+}
+blockquote {
+  @include fontSize(18);
+  border-left: black solid 2px;
+  padding: 0.5rem 3rem;
+  position: relative;
+  &:before {
+    color: black;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
 
+    vertical-align: -0.4em;
+  }
+  &:after {
+    color: black;
+    content: close-quote;
+    font-size: 4em;
+    position: absolute;
+    margin-left: 5px;
+    transform: translateY(-10px);
+  }
+}
+p {
+  @include fontSize(24);
+
+  & > a {
+    font-size: inherit;
+    text-decoration: none;
+    color: black;
+    &:hover {
+      border-bottom: 1px solid black;
+    }
+  }
+  @media (max-width: 700px) {
+    font-size: calc(1rem + 1vw) !important;
+    line-height: 1.6 !important;
+  }
+}
 .header-p {
   @include fontSize(24);
 
   font-style: italic;
   margin-top: 6rem;
+  @media (max-width: 700px) {
+    font-size: calc(1.5rem + 1vw) !important;
+  }
 }
 
 .section__guide__list,
@@ -37,6 +86,10 @@ h1 {
   @include fontSize(20);
   line-height: 30px;
   font-style: italic;
+  @media (max-width: 700px) {
+    font-size: calc(1rem + 1vw) !important;
+    line-height: 1.8;
+  }
 }
 input[type="text"] {
   @include fontSize(17);
@@ -49,7 +102,10 @@ button[type="submit"] i {
 }
 .node text {
   font-family: "Raleway", sans-serif;
-  @include fontSize(24);
-  color: red;
-  transform: translateX(2rem);
+  @include fontSize(20);
+  transform: translateX(2rem) translateY(0.8rem);
+  max-width: 300px;
+  // @media (max-width: 700px) {
+  //   @include fontSize(17);
+  // }
 }

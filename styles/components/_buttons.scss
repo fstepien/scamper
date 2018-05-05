@@ -19,11 +19,12 @@ input[type="submit"] {
 }
 
 .utilities {
-  & button {
+  &__button {
     background: transparent;
     border: 0;
     position: fixed;
     left: 1rem;
+    transition: all 0.4s ease;
 
     &:after {
       color: black;
@@ -35,10 +36,9 @@ input[type="submit"] {
       transition: all 1s ease;
       background: white;
     }
-
     & img {
       height: 35px;
-      backround: white;
+      background: white;
     }
     &.remove-all {
       bottom: 10px;
@@ -59,6 +59,24 @@ input[type="submit"] {
       &:hover:after {
         opacity: 1;
         content: "More Info";
+      }
+    }
+    @media (max-width: 700px) {
+      top: 10px;
+      height: 45px;
+      padding: 2px 10px;
+      display: none;
+      &.remove-all {
+        left: calc(100% - 180px);
+      }
+      &.explore-example {
+        left: calc(100% - 120px);
+      }
+      &.info {
+        left: calc(100% - 60px);
+      }
+      &:after {
+        display: none;
       }
     }
   }

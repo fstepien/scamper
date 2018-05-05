@@ -31,7 +31,7 @@ $white: #ffffff;
 .wrap60 {
   width: 60%;
   margin: 0 auto;
-  @media (max-width: 560px) {
+  @media (max-width: 900px) {
     width: 90%;
   }
 }
@@ -47,21 +47,3 @@ $white: #ffffff;
   position: absolute;
   width: 1px;
 }
-// .skip-link {
-//   position: absolute;
-//   left: -1000px;
-//   top: 5px;
-//   z-index: 999;
-//   background: black;
-//   color: white;
-//   @include fontSize(20);
-// }
-// .skip-link:focus {
-//   left: 0;
-// }
-//       & input[id="shop-toggle"] {
-//         display: none;
-//       }
-//       & input[id="shop-toggle"]:checked + .header__nav__list__shop__dropdown {
-//         display: block !important;
-//       }

@@ -6,21 +6,26 @@ const drawTree = function() {
   // display tree data in .tree-diagram-canvas which will be the canvas
   //   removes any existing svg
   d3.select("svg").remove();
+  //get canvas height
+  const canvasHeight =
+    d3
+      .select(".tree-diagram-canvas")
+      .node()
+      .getBoundingClientRect().height * 0.65;
+
+  //start new svg
   const canvas = d3
     .select(".tree-diagram-canvas")
     .append("svg")
     .attr("width", "100%")
     .attr("height", "100%")
+    .attr("preserveAspectRatio", "xMinYMin meet")
+    .attr("viewBox", "0 0 1000 1500")
+    .classed("svg-content-responsive", true)
     .append("g")
     .attr("transform", "translate(50,50)");
 
-  const canvasHeight =
-    d3
-      .select(".tree-diagram-canvas")
-      .node()
-      .getBoundingClientRect().height * 0.9;
-
-  const tree = d3.layout.tree().size([canvasHeight, 300]);
+  const tree = d3.layout.tree().size([canvasHeight, 320]);
 
   //   runs tree layout and returns array of objects
   const nodes = tree.nodes(data);

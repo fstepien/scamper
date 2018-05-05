@@ -128,6 +128,8 @@ $(function() {
     }
   };
 
+  const toggleInfo = () => $(".info-pop").toggle();
+
   //   Event Listeners
   // Load ideas from local storage
   loadIdeas();
@@ -142,6 +144,9 @@ $(function() {
     $(".section").css("display", "none");
     $(".tree-diagram").css("display", "none");
   });
+  //show more info
+  $(".info").on("click", toggleInfo);
+  $(".close-modal").on("click", toggleInfo);
   //load example data
   $(".explore-example").on("click", function() {
     if (
@@ -152,7 +157,11 @@ $(function() {
       fetch("js/data.json")
         .then(res => res.json())
         .then(data => {
-          console.log(data);
+          $(".section__ideas").each((i, section) => {
+            while (section.firstChild) {
+              section.removeChild(section.firstChild);
+            }
+          });
           localStorage.clear();
           localStorage.setItem("ideas", JSON.stringify(data));
           $(".section").css("display", "block");
@@ -188,4 +197,17 @@ $(function() {
     .smoothScroll({
       speed: 900
     });
+
+  //listen to scroll to display
+  $(window).scroll(function() {
+    windowHeight = $(window).height();
+    windowWidth = $(window).width();
+    scrollTop = $(window).scrollTop();
+    windowWidth <= 700
+      ? scrollTop >= windowHeight
+        ? $(".utilities__button").css("display", "block")
+        : $(".utilities__button").css("display", "none")
+      : $(".utilities__button").css("display", "block");
+  });
 });
+drawTree();

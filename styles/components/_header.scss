@@ -14,8 +14,12 @@
       max-height: 100px;
       transform: translateY(6px);
       margin-right: 2rem;
+      @media (max-width: 700px) {
+        max-height: calc(3rem + 6vw);
+      }
     }
   }
+
   &__text {
     text-align: center;
     & a {

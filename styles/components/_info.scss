@@ -1,0 +1,22 @@
+.info-pop {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  min-height: 250px;
+  width: 80%;
+  margin: 0 auto;
+  border: 3px black solid;
+  background: white;
+  padding: 20px;
+  display: none;
+  &__head {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    & img {
+      height: 26px;
+      transform: rotate(45deg) translateX(-5px) translateY(15px);
+    }
+  }
+}

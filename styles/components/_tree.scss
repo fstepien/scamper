@@ -14,9 +14,14 @@
   }
 }
 .tree-diagram-canvas {
-  height: calc(100vh - 332px);
+  height: calc(100vh - 200px);
   width: 100%;
-  border: 1px red solid;
+  display: inline-block;
+  position: relative;
+
+  padding-bottom: 100%; /* aspect ratio */
+  vertical-align: top;
+  overflow: hidden;
 }
 .node circle {
   fill: white;
@@ -30,9 +35,14 @@
   fill: none;
   stroke: black;
   stroke-width: 1px;
-  z-index: 0;
   position: relative;
 }
-.tree-diagram {
-  display: none;
+// .tree-diagram {
+//   display: none;
+// }
+.svg-content-responsive {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 0;
 }

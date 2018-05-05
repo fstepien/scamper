@@ -55,7 +55,29 @@ Once the structure was created "ideas" can be pushed into the children array of 
     localStorage.setItem("ideas", JSON.stringify(ideas));
   };
 ```
+For users that are new to the app and/or to the scamper brainstorming technique it was important to add an example. Example data can be stored in a json file and loaded using the following d3 method. 
 
+```
+d3.json("data.json", data => {
+// call d3 visualization
+});
+```
+
+There is a also a `.transition()` d3 method that will update an existing tree, neither were used in the scamper app. For this application, all data is loaded from local storage into a variable. In the one instance we need to fetch the example data it also needs to be loaded into all of the sections on the page so it is first loaded into local storage. 
+
+```
+fetch("js/data.json")
+        .then(res => res.json())
+        .then(data => {
+          localStorage.clear();
+          localStorage.setItem("ideas", JSON.stringify(data));
+          $(".section").css("display", "block");
+          $(".tree-diagram").css("display", "block");
+          loadIdeas();
+          drawTree();
+          treeTrue();
+        });
+```
 
 The code uses [jQuery Library](https://jquery.com/) and [Smooth Scroll PlugIn](https://plugins.jquery.com/smooth-scroll/)
 
