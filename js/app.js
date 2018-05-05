@@ -99,7 +99,9 @@ $(function() {
       .parent()
       .attr("data-section");
     // remove single idea from ui
-    confirm("Are you sure?") ? ideaTarget.remove() : "";
+    confirm("Are you sure you want to clear this idea?")
+      ? ideaTarget.remove()
+      : "";
     // find where this idea lives in the data and splice it out
     let ideas = checkLocalStorage();
     const sectionIndex = ideas.children.findIndex(
@@ -111,11 +113,12 @@ $(function() {
     ideas.children[sectionIndex].children.splice(ideaIndex, 1);
     // return ideas back to local storage
     localStorage.setItem("ideas", JSON.stringify(ideas));
+    tree ? drawTree() : "";
   };
 
   //clear All ideas from all sections
   const clearAllIdeas = function() {
-    if (confirm("Are you sure?")) {
+    if (confirm("Are you sure you want to CLEAR ALL?")) {
       $(".section__ideas").each((i, section) => {
         while (section.firstChild) {
           section.removeChild(section.firstChild);
@@ -126,22 +129,58 @@ $(function() {
   };
 
   //   Event Listeners
+  // Load ideas from local storage
   loadIdeas();
+  //add idea to UI and local storage
   $("form").on("submit", addIdea);
+  // remove idea from UI and local storage
   $("ul").on("click", "button", removeIdea);
+  //remove all ideas and clear tree diagram
   $(".remove-all").on("click", function() {
     clearAllIdeas();
     d3.select("svg").remove();
+    $(".section").css("display", "none");
+    $(".tree-diagram").css("display", "none");
   });
+  //load example data
+  $(".explore-example").on("click", function() {
+    if (
+      confirm(
+        "Are you sure you want to load sample data and CLEAR ALL previous ideas?"
+      )
+    ) {
+      fetch("js/data.json")
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+          localStorage.clear();
+          localStorage.setItem("ideas", JSON.stringify(data));
+          $(".section").css("display", "block");
+          $(".tree-diagram").css("display", "block");
+          loadIdeas();
+          drawTree();
+          treeTrue();
+        });
+    }
+  });
+  //draw tree and allow for tree updates on new idea add
   $(".draw-tree").on("click", function() {
+    nextSection = $(this).attr("href");
+    $(nextSection).css("display", "flex");
     drawTree();
-    console.log(tree);
     treeTrue();
-    console.log(tree);
   });
+  // on internal link display section and smooth scroll to it
   $("a")
     .on("click", function(e) {
-      nextSection = $(this).attr("href");
+      const currentSection = $(this).data().section;
+      //   if linking out of a section which has an idea in the input box trigger a submit (added after watching users interact with app)
+      if (currentSection) {
+        if ($(`input[id=${currentSection}]`).val() !== "") {
+          $(`input[id=${currentSection}]`).submit();
+        }
+      }
+      const nextSection = $(this).attr("href");
       if (/^#section/.test(nextSection)) {
         $(nextSection).css("display", "flex");
       }
@@ -150,7 +189,3 @@ $(function() {
       speed: 900
     });
 });
-
-// document.querySelector(".draw-tree").addEventListener("click", drawTree);
-// remove after testing
-// drawTree();

@@ -17,3 +17,49 @@ input[type="submit"] {
     transition: transform 0.1s;
   }
 }
+
+.utilities {
+  & button {
+    background: transparent;
+    border: 0;
+    position: fixed;
+    left: 1rem;
+
+    &:after {
+      color: black;
+      @include fontSize(14);
+      position: relative;
+      right: -10px;
+      bottom: 12px;
+      opacity: 0;
+      transition: all 1s ease;
+      background: white;
+    }
+
+    & img {
+      height: 35px;
+      backround: white;
+    }
+    &.remove-all {
+      bottom: 10px;
+      &:hover:after {
+        opacity: 1;
+        content: "Clear All";
+      }
+    }
+    &.explore-example {
+      bottom: 60px;
+      &:hover:after {
+        opacity: 1;
+        content: "Load Example";
+      }
+    }
+    &.info {
+      bottom: 110px;
+      &:hover:after {
+        opacity: 1;
+        content: "More Info";
+      }
+    }
+  }
+}

@@ -5,37 +5,96 @@
     {
       "name": "substitute",
       "parent": "scamper",
-      "children": [{ "name": "sub idea 2", "parent": "substitute" }]
+      "children": [
+        {
+          "name": "change website button color to improve conversion",
+          "parent": "substitute"
+        },
+        {
+          "name": "use A/B testing to find images to substitute",
+          "parent": "substitute"
+        }
+      ]
     },
     {
       "name": "combine",
       "parent": "scamper",
-      "children": [{ "name": "comb idea 1", "parent": "combine" }]
+      "children": [
+        {
+          "name": "Incorporate js library to add functionality",
+          "parent": "combine"
+        },
+        {
+          "name": "combine the design and development team to improve process",
+          "parent": "combine"
+        }
+      ]
     },
     {
       "name": "adapt",
       "parent": "scamper",
-      "children": [{ "name": "adapt idea 2", "parent": "adapt" }]
+      "children": [
+        {
+          "name":
+            "I could broaden the focus of the website to reach a larger audience",
+          "parent": "adapt"
+        },
+        {
+          "name":
+            "I could apply a technique used in the film industry in my website",
+          "parent": "adapt"
+        }
+      ]
     },
     {
       "name": "modify",
       "parent": "scamper",
-      "children": [{ "name": "mod idea 2", "parent": "modify" }]
+      "children": [
+        {
+          "name":
+            "Customers primary care about this feature so I will enhance it",
+          "parent": "modify"
+        }
+      ]
     },
     {
       "name": "put",
       "parent": "scamper",
-      "children": [{ "name": "purp idea 2", "parent": "put" }]
+      "children": [
+        {
+          "name": "I will  add skip to main accessibility feature",
+          "parent": "put"
+        },
+        {
+          "name":
+            "I will improve the layout to make the text more readable for everyone",
+          "parent": "put"
+        },
+        {
+          "name": "I will add visually hidden labels to input fields",
+          "parent": "put"
+        }
+      ]
     },
     {
       "name": "eliminate",
       "parent": "scamper",
-      "children": [{ "name": "elim idea 2", "parent": "eliminate" }]
+      "children": [
+        {
+          "name": "I will eliminate unnecessary content to increase whitespace",
+          "parent": "eliminate"
+        }
+      ]
     },
     {
       "name": "rearrange",
       "parent": "scamper",
-      "children": [{ "name": "rear idea 2", "parent": "rearrange" }]
+      "children": [
+        {
+          "name": "I will move content to focus on important components",
+          "parent": "rearrange"
+        }
+      ]
     }
   ]
 }

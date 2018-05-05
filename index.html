@@ -18,8 +18,10 @@
             <h1 class="main-header__title__h1">SCAMPER</h1>
         </div>
         <div class="main-header__text wrap60">
-            <p class="header-p">A brainstorming tool to improve a product, service or an idea by asking guided questions on how to Substitute,
-                Combine, Adapt, Modify, Put to other uses, Eliminate, Rearrange</p>
+            <p class="header-p">A brainstorming tool to improve a product or service. First define a problem or area for improvement, answer
+                guided questions for each prompt Substitute, Combine, Adapt, Modify, Put to other uses, Eliminate, Rearrange
+                then map your ideas on a tree diagram.
+            </p>
             <a href="#section-s" class="a-tag lets-start">Let's Start</a>
         </div>
     </header>
@@ -30,8 +32,9 @@
         <div class="section__guide wrap60">
             <h1 class="section__guide__h1">Substitute</h1>
             <p class="section__guide__list">
-                Can I replace or change any components? Can I change my feelings or attitude towards it? Can I use other process or procedures?
-                Can I use this idea in a different place? Can I change the rules?
+                How can I replace or change any components? How can I change my feelings or attitude towards it? How can I use other process
+                or procedures? How can I use other ingredients or material? How can I use this idea in a different place?
+                How can I use this idea in a different place? Can I change the rules?
             </p>
             <form data-section="substitute">
                 <label for="substitute" class="visuallyhidden">Enter Idea for Substitute: </label>
@@ -48,7 +51,7 @@
         </ul>
 
         <div class="section__button-next">
-            <a href="#section-c" class="a-tag lets-start">Move on to Combine</a>
+            <a href="#section-c" class="a-tag lets-start" data-section="substitute">Move on to Combine</a>
         </div>
     </section>
     <section class="section-c section" id="section-c">
@@ -56,8 +59,8 @@
             <h1 class="section__guide__h1">Combine</h1>
             <p class="section__guide__list">
                 What would happen if you combined this product with another, to create something new? What if you combined purposes or objectives?
-                What could you combine to maximize the uses of this product? How could you combine talent and resources to
-                create a new approach to this product?
+                What if materials or technques could be combined? What could you combine to maximize the uses of this product?
+                How could you combine talent and resources to create a new approach to this product?
             </p>
             <form data-section="combine">
                 <label for="combine" class="visuallyhidden">Enter Idea for Substitute: </label>
@@ -74,7 +77,7 @@
         </ul>
 
         <div class="section__button-next">
-            <a href="#section-a" class="a-tag lets-start">Move on to Adapt</a>
+            <a href="#section-a" class="a-tag lets-start" data-section="combine">Move on to Adapt</a>
         </div>
     </section>
     <section class="section-a section" id="section-a">
@@ -83,7 +86,8 @@
             <p class="section__guide__list">
                 How could you adapt or readjust this product to serve another purpose or use? What else is the product like? Who or what
                 could you emulate to adapt this product? What else is like your product? What other context could you put
-                your product into? What other products or ideas could you use for inspiration?
+                your product into? What other products or ideas could you use for inspiration? What idea outside my field
+                could I incorporate?
             </p>
             <form data-section="adapt">
                 <label for="adapt" class="visuallyhidden">Enter Idea for Modify: </label>
@@ -100,7 +104,7 @@
         </ul>
 
         <div class="section__button-next">
-            <a href="#section-m" class="a-tag lets-start">Move on to Modify</a>
+            <a href="#section-m" class="a-tag lets-start" data-section="adapt">Move on to Modify</a>
         </div>
     </section>
     <section class="section-m section" id="section-m">
@@ -109,7 +113,7 @@
             <p class="section__guide__list">
                 How could you change the shape, look, or feel of your product? What could you add to modify this product? What could you
                 emphasize or highlight to create more value? What element of this product could you strengthen to create
-                something new?
+                something new? How can I add extra value?
             </p>
             <form data-section="modify">
                 <label for="modify" class="visuallyhidden">Enter Idea for Modify: </label>
@@ -126,7 +130,7 @@
         </ul>
 
         <div class="section__button-next">
-            <a href="#section-p" class="a-tag lets-start">Move on to Purpose</a>
+            <a href="#section-p" class="a-tag lets-start" data-section="modify">Move on to Purpose</a>
         </div>
     </section>
     <section class="section-p section" id="section-p">
@@ -135,6 +139,7 @@
             <p class="section__guide__list">
                 Can you use this product somewhere else, perhaps in another industry? Who else could use this product? How would this product
                 behave differently in another setting? Could you recycle the waste from this product to make something new?
+                How would a child or older person use it? How would people with different disabilities use this?
             </p>
             <form data-section="put">
                 <label for="put" class="visuallyhidden">Enter Idea for Purpose: </label>
@@ -151,7 +156,7 @@
         </ul>
 
         <div class="section__button-next">
-            <a href="#section-e" class="a-tag lets-start">Move on to Eliminate</a>
+            <a href="#section-e" class="a-tag lets-start" data-section="put">Move on to Eliminate</a>
         </div>
     </section>
     <section class="section-e section" id="section-e">
@@ -177,7 +182,7 @@
         </ul>
 
         <div class="section__button-next">
-            <a href="#section-r" class="a-tag lets-start">Move on to Rearrange</a>
+            <a href="#section-r" class="a-tag lets-start" data-section="eliminate">Move on to Rearrange</a>
         </div>
     </section>
     <section class="section-r section" id="section-r">
@@ -203,7 +208,7 @@
         </ul>
 
         <div class="section__button-next">
-            <a href="#tree-diagram" class="a-tag draw-tree">Let's Review!!!</a>
+            <a href="#tree-diagram" class="a-tag draw-tree" data-section="rearrange">Let's Review!!!</a>
         </div>
     </section>
     <section id="tree-diagram" class="tree-diagram">
@@ -216,13 +221,23 @@
         </div>
     </section>
     <section class="utilities">
-        <button class="remove-all a-tag">Remove All</button>
+        <button class="info a-tag">
+            <img src="assets/info.svg" alt="info icon">
+        </button>
+        <button class="explore-example a-tag">
+            <img src="assets/explore.svg" alt="explore icon">
+        </button>
+        <button class="remove-all a-tag">
+            <img src="assets/garbage.svg" alt="garbage can icon">
+
+        </button>
     </section>
 
 
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.1.2/jquery.smooth-scroll.min.js"></script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="js/tree.js"></script>
