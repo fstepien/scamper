@@ -4,10 +4,15 @@ const drawTree = function() {
     return alert("Please input your ideas before mapping");
   }
   // display tree data in .tree-diagram-canvas which will be the canvas
+  const dataNodes = data.children.reduce((totalNodes, nodeInChildren) => {
+    return totalNodes + nodeInChildren.children.length;
+  }, 0);
+  const addHeight = dataNodes > 30 ? (dataNodes - 30) * 20 : 0;
+  console.log(addHeight);
   //   removes any existing svg
   d3.select("svg").remove();
   //get canvas height
-  const canvasHeight = 900;
+  const canvasHeight = 900 + addHeight;
 
   //start new svg
   const canvas = d3
@@ -18,7 +23,7 @@ const drawTree = function() {
     .classed("svg-content-responsive", true)
     .append("g")
     .attr("transform", "translate(50,50)");
-
+  //This is a ratio!!!
   const tree = d3.layout.tree().size([canvasHeight, 320]);
 
   //   runs tree layout and returns array of objects
@@ -59,11 +64,14 @@ const drawTree = function() {
     .append("text")
     .attr("class", "parent-label")
     .text(d => {
-      console.log(d);
       if (d.parent === null || d.parent.name === "scamper") {
         return d.name;
       }
     });
 
   node.append("circle").attr("r", 5);
+  //if overflow hidden keeps the printing to one page, but cuts it off the tree 50 ideas... at which point overflow visible allows for multi page printing
+  addHeight <= 400
+    ? d3.select(".tree-diagram-canvas").style("overflow", "hidden")
+    : d3.select(".tree-diagram-canvas").style("overflow", "visible");
 };

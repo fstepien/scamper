@@ -149,7 +149,7 @@ $(function() {
   $(".close-modal").on("click", toggleInfo);
   $(".print").on("click", function() {
     tree
-      ? $(".tree-diagram").printThis()
+      ? $(".tree-diagram-canvas").printThis()
       : alert("There is currently no tree diagram to print");
   });
   //load example data
