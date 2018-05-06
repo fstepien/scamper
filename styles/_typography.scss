@@ -54,6 +54,11 @@ blockquote {
     margin-left: 5px;
     transform: translateY(-10px);
   }
+  @media (max-width: 700px) {
+    @include fontSize(14);
+    border: 0;
+    padding: 0;
+  }
 }
 p {
   @include fontSize(24);

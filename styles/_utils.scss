@@ -47,3 +47,15 @@ $white: #ffffff;
   position: absolute;
   width: 1px;
 }
+.skip-link {
+  position: absolute;
+  left: -1000px;
+  top: 5px;
+  z-index: 999;
+  background: black;
+  color: white;
+  @include fontSize(20);
+}
+.skip-link:focus {
+  left: 0;
+}

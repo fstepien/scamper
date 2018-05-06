@@ -36,6 +36,7 @@
 </head>
 
 <body>
+    <a href="#section-s" class="skip-link">Skip to Substitute Section</a>
     <header class="main-header">
         <div class="main-header__title">
             <img class="main-header__title__img" src="assets/artificial-intelligence.svg" alt="brain made up of nodes to represent idea points">
@@ -49,9 +50,6 @@
             <a href="#section-s" class="a-tag lets-start">Let's Start</a>
         </div>
     </header>
-    <section class="scamper-map">
-        <!-- insert diagram here -->
-    </section>
     <section class="section-s section" id="section-s">
         <div class="section__guide wrap60">
             <h1 class="section__guide__h1">Substitute</h1>
@@ -63,11 +61,12 @@
             <form data-section="substitute">
                 <label for="substitute" class="visuallyhidden">Enter Idea for Substitute: </label>
                 <input maxlength="90" type="text" placeholder="add idea" id="substitute" name="substitute" required>
-                <button type="submit">
-                    <img src="assets/idea.svg" alt="Idea Lightbulb">
+                <button type="submit" aria-label="Submit substitute idea">
+                    <img src="assets/idea.svg" alt="Add Icon">
                 </button>
 
             </form>
+            <a href="#section-c" class="skip-link">Skip to Combine</a>
         </div>
 
         <ul data-section="list-substitute" class="section__ideas section__ideas--s wrap60">
@@ -89,11 +88,12 @@
             <form data-section="combine">
                 <label for="combine" class="visuallyhidden">Enter Idea for Substitute: </label>
                 <input type="text" placeholder="add idea" id="combine" name="combine" maxlength="90" required>
-                <button type="submit">
-                    <img src="assets/idea.svg" alt="Idea Lightbulb">
+                <button type="submit" aria-label="Submit combine idea">
+                    <img src="assets/idea.svg" alt="Add Icon">
                 </button>
 
             </form>
+            <a href="#section-a" class="skip-link">Skip to Adapt</a>
         </div>
 
         <ul data-section="list-combine" class="section__ideas section__ideas--c wrap60">
@@ -116,11 +116,12 @@
             <form data-section="adapt">
                 <label for="adapt" class="visuallyhidden">Enter Idea for Modify: </label>
                 <input type="text" placeholder="add idea" id="adapt" name="adapt" maxlength="90" required>
-                <button type="submit">
-                    <img src="assets/idea.svg" alt="Idea Lightbulb">
+                <button type="submit" aria-label="Submit adapt idea">
+                    <img src="assets/idea.svg" alt="Add Icon">
                 </button>
 
             </form>
+            <a href="#section-m" class="skip-link">Skip to Modify</a>
         </div>
 
         <ul data-section="list-adapt" class="section__ideas section__ideas--c wrap60">
@@ -142,11 +143,12 @@
             <form data-section="modify">
                 <label for="modify" class="visuallyhidden">Enter Idea for Modify: </label>
                 <input type="text" placeholder="add idea" id="modify" name="modify" maxlength="90" required>
-                <button type="submit">
-                    <img src="assets/idea.svg" alt="Idea Lightbulb">
+                <button type="submit" aria-label="Submit modify idea">
+                    <img src="assets/idea.svg" alt="Add Icon">
                 </button>
 
             </form>
+            <a href="#section-p" class="skip-link">Skip to Put to other use section</a>
         </div>
 
         <ul data-section="list-modify" class="section__ideas section__ideas--m wrap60">
@@ -169,10 +171,11 @@
                 <label for="put" class="visuallyhidden">Enter Idea for Purpose: </label>
                 <input type="text" placeholder="add idea" id="put" name="put" maxlength="90" required>
                 <button type="submit">
-                    <img src="assets/idea.svg" alt="Idea Lightbulb">
+                    <img src="assets/idea.svg" alt="Add Icon">
                 </button>
 
             </form>
+            <a href="#section-e" class="skip-link">Skip to Eliminate</a>
         </div>
 
         <ul data-section="list-put" class="section__ideas section__ideas--p wrap60">
@@ -194,11 +197,12 @@
             <form data-section="eliminate">
                 <label for="eliminate" class="visuallyhidden">Enter Idea for Purpose: </label>
                 <input type="text" placeholder="add idea" id="eliminate" name="eliminate" maxlength="90" required>
-                <button type="submit">
-                    <img src="assets/idea.svg" alt="Idea Lightbulb">
+                <button type="submit" aria-label="Submit eliminate idea">
+                    <img src="assets/idea.svg" alt="Add Icon">
                 </button>
 
             </form>
+            <a href="#section-r" class="skip-link">Skip to Rearrange</a>
         </div>
 
         <ul data-section="list-eliminate" class="section__ideas section__ideas--p wrap60">
@@ -220,11 +224,12 @@
             <form data-section="rearrange">
                 <label for="rearrange" class="visuallyhidden">Enter Idea for Purpose: </label>
                 <input type="text" placeholder="add idea" id="rearrange" maxlength="90" name="rearrange" required>
-                <button type="submit">
-                    <img src="assets/idea.svg" alt="Idea Lightbulb">
+                <button type="submit" aria-label="Submit rearrange idea">
+                    <img src="assets/idea.svg" alt="Add Icon">
                 </button>
 
             </form>
+            <a href="#tree-diagram" class="skip-link">Finish, this will draw out a tree diagram</a>
         </div>
 
         <ul data-section="list-rearrange" class="section__ideas section__ideas--p wrap60">
@@ -245,17 +250,17 @@
         </div>
     </section>
     <section class="utilities">
-        <button class="info a-tag utilities__button">
+        <button class="info a-tag utilities__button" aria-label="Toggle Info Modal Open/Close">
             <img src="assets/info.svg" alt="info icon">
         </button>
-        <button class="explore-example a-tag utilities__button">
+        <button class="explore-example a-tag utilities__button" aria-label="Load SCAMPER example">
             <img src="assets/explore.svg" alt="explore icon">
         </button>
-        <button class="remove-all a-tag utilities__button">
+        <button class="remove-all a-tag utilities__button" aria-label="clear all ideas from screen and localstorage">
             <img src="assets/garbage.svg" alt="garbage can icon">
 
         </button>
-        <button class="print a-tag utilities__button">
+        <button class="print a-tag utilities__button" aria-label="print tree diagram">
             <img src="assets/printer.svg" alt="printer icon">
 
         </button>
@@ -263,7 +268,7 @@
     <aside class="info-pop">
         <div class="info-pop__head">
             <h2>More Info About Scamper</h2>
-            <img src="assets/idea.svg" class="close-modal" alt="close icon">
+            <img src="assets/idea.svg" class="close-modal" alt="close icon" aria-label="Close Modal">
         </div>
         <blockquote>
 
@@ -274,8 +279,10 @@
             mind map and an online tool that generates random questions to get you out of a rut whenever you need.
         </blockquote>
         <p>Reference:
-            <a target="_blank" href="https://litemind.com/scamper/">litemind.com - Scamper</a>
+            <a target="_blank" rel="noopener" href="https://litemind.com/scamper/">litemind.com - Scamper</a>
         </p>
+        <p>In the Six Sigma DMAIC process (Define, Measure, Analyze, Improve and Control), Scamper could be used as one of the
+            tools to generate potential solutions within the Improve step. </p>
     </aside>
 
 
