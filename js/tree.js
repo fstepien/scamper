@@ -7,20 +7,14 @@ const drawTree = function() {
   //   removes any existing svg
   d3.select("svg").remove();
   //get canvas height
-  const canvasHeight =
-    d3
-      .select(".tree-diagram-canvas")
-      .node()
-      .getBoundingClientRect().height * 0.65;
+  const canvasHeight = 900;
 
   //start new svg
   const canvas = d3
     .select(".tree-diagram-canvas")
     .append("svg")
-    .attr("width", "100%")
-    .attr("height", "100%")
     .attr("preserveAspectRatio", "xMinYMin meet")
-    .attr("viewBox", "0 0 1000 1500")
+    .attr("viewBox", "0 0 1300 3000")
     .classed("svg-content-responsive", true)
     .append("g")
     .attr("transform", "translate(50,50)");
@@ -53,7 +47,23 @@ const drawTree = function() {
       return `translate(${data.y},${data.x})`;
     });
 
-  node.append("text").text(d => d.name);
+  // node.append("text").text(d => d.name);
+
+  node.append("text").text(d => {
+    if (d.parent !== null && d.parent.name !== "scamper") {
+      return d.name;
+    }
+  });
+
+  node
+    .append("text")
+    .attr("class", "parent-label")
+    .text(d => {
+      console.log(d);
+      if (d.parent === null || d.parent.name === "scamper") {
+        return d.name;
+      }
+    });
 
   node.append("circle").attr("r", 5);
 };

@@ -18,9 +18,9 @@
             <h1 class="main-header__title__h1">SCAMPER</h1>
         </div>
         <div class="main-header__text wrap60">
-            <p class="header-p">A brainstorming tool to improve a product or service. First define a problem or area for improvement, answer
-                guided questions for each prompt Substitute, Combine, Adapt, Modify, Put to other uses, Eliminate, Rearrange
-                then map your ideas on a tree diagram.
+            <p class="header-p">A brainstorming tool to improve a product or service. First define a problem or area for improvement; answer
+                guided questions for each prompt Substitute, Combine, Adapt, Modify, Put to other uses, Eliminate, Rearrange;
+                finally, map your ideas on a tree diagram.
             </p>
             <a href="#section-s" class="a-tag lets-start">Let's Start</a>
         </div>
@@ -38,7 +38,7 @@
             </p>
             <form data-section="substitute">
                 <label for="substitute" class="visuallyhidden">Enter Idea for Substitute: </label>
-                <input type="text" placeholder="add idea" id="substitute" name="substitute" required>
+                <input maxlength="90" type="text" placeholder="add idea" id="substitute" name="substitute" required>
                 <button type="submit">
                     <img src="assets/idea.svg" alt="Idea Lightbulb">
                 </button>
@@ -64,7 +64,7 @@
             </p>
             <form data-section="combine">
                 <label for="combine" class="visuallyhidden">Enter Idea for Substitute: </label>
-                <input type="text" placeholder="add idea" id="combine" name="combine" required>
+                <input type="text" placeholder="add idea" id="combine" name="combine" maxlength="90" required>
                 <button type="submit">
                     <img src="assets/idea.svg" alt="Idea Lightbulb">
                 </button>
@@ -91,7 +91,7 @@
             </p>
             <form data-section="adapt">
                 <label for="adapt" class="visuallyhidden">Enter Idea for Modify: </label>
-                <input type="text" placeholder="add idea" id="adapt" name="adapt" required>
+                <input type="text" placeholder="add idea" id="adapt" name="adapt" maxlength="90" required>
                 <button type="submit">
                     <img src="assets/idea.svg" alt="Idea Lightbulb">
                 </button>
@@ -117,7 +117,7 @@
             </p>
             <form data-section="modify">
                 <label for="modify" class="visuallyhidden">Enter Idea for Modify: </label>
-                <input type="text" placeholder="add idea" id="modify" name="modify" required>
+                <input type="text" placeholder="add idea" id="modify" name="modify" maxlength="90" required>
                 <button type="submit">
                     <img src="assets/idea.svg" alt="Idea Lightbulb">
                 </button>
@@ -143,7 +143,7 @@
             </p>
             <form data-section="put">
                 <label for="put" class="visuallyhidden">Enter Idea for Purpose: </label>
-                <input type="text" placeholder="add idea" id="put" name="put" required>
+                <input type="text" placeholder="add idea" id="put" name="put" maxlength="90" required>
                 <button type="submit">
                     <img src="assets/idea.svg" alt="Idea Lightbulb">
                 </button>
@@ -169,7 +169,7 @@
             </p>
             <form data-section="eliminate">
                 <label for="eliminate" class="visuallyhidden">Enter Idea for Purpose: </label>
-                <input type="text" placeholder="add idea" id="eliminate" name="eliminate" required>
+                <input type="text" placeholder="add idea" id="eliminate" name="eliminate" maxlength="90" required>
                 <button type="submit">
                     <img src="assets/idea.svg" alt="Idea Lightbulb">
                 </button>
@@ -195,7 +195,7 @@
             </p>
             <form data-section="rearrange">
                 <label for="rearrange" class="visuallyhidden">Enter Idea for Purpose: </label>
-                <input type="text" placeholder="add idea" id="rearrange" name="rearrange" required>
+                <input type="text" placeholder="add idea" id="rearrange" maxlength="90" name="rearrange" required>
                 <button type="submit">
                     <img src="assets/idea.svg" alt="Idea Lightbulb">
                 </button>
@@ -231,6 +231,10 @@
             <img src="assets/garbage.svg" alt="garbage can icon">
 
         </button>
+        <button class="print a-tag utilities__button">
+            <img src="assets/printer.svg" alt="printer icon">
+
+        </button>
     </section>
     <aside class="info-pop">
         <div class="info-pop__head">
@@ -256,6 +260,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.1.2/jquery.smooth-scroll.min.js"></script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="js/printThis.js"></script>
 <script src="js/tree.js"></script>
 <script src="js/app.js"></script>
 

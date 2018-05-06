@@ -147,6 +147,11 @@ $(function() {
   //show more info
   $(".info").on("click", toggleInfo);
   $(".close-modal").on("click", toggleInfo);
+  $(".print").on("click", function() {
+    tree
+      ? $(".tree-diagram").printThis()
+      : alert("There is currently no tree diagram to print");
+  });
   //load example data
   $(".explore-example").on("click", function() {
     if (
@@ -210,4 +215,5 @@ $(function() {
       : $(".utilities__button").css("display", "block");
   });
 });
-drawTree();
+//for testing only
+// drawTree();

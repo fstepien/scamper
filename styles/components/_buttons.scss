@@ -61,6 +61,13 @@ input[type="submit"] {
         content: "More Info";
       }
     }
+    &.print {
+      bottom: 160px;
+      &:hover:after {
+        opacity: 1;
+        content: "Print Tree";
+      }
+    }
     @media (max-width: 700px) {
       top: 10px;
       height: 45px;
@@ -74,6 +81,9 @@ input[type="submit"] {
       }
       &.info {
         left: calc(100% - 60px);
+      }
+      &.print {
+        left: calc(100% - 240px);
       }
       &:after {
         display: none;

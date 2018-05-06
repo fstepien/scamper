@@ -103,9 +103,15 @@ button[type="submit"] i {
 .node text {
   font-family: "Raleway", sans-serif;
   @include fontSize(20);
-  transform: translateX(2rem) translateY(0.8rem);
+  transform: translateX(2rem) translateY(0.7rem);
   max-width: 300px;
+
   // @media (max-width: 700px) {
   //   @include fontSize(17);
   // }
+}
+
+.parent-label {
+  transform: translateX(0) translateY(-2rem) !important;
+  text-anchor: middle;
 }
