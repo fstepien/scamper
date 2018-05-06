@@ -1,7 +1,7 @@
 SCAMPER
 =======
 
-[Live at https://scamper.filipstepien.com](https://scamper.filipstepien.com)
+[https://scamper.filipstepien.com](https://scamper.filipstepien.com)
 
 A brainstorming tool to improve a product, service or an idea by asking guided questions on how to Substitute, Combine, Adapt, Modify, Put to other uses, Eliminate, Rearrange. 
 
@@ -91,13 +91,13 @@ There are many similarities in writting jQuery and D3, making it simple to apply
 
 
 
-###A11y
+### A11y
 
 + Skip Links on first tab and after each input field ` class="skip-link"`
 + All buttons include aria-labels `aria-label="Submit substitute idea"`
 + All inputs have hidden labels `<label class="visuallyhidden">`
 
-###jQuery and plugins
+### sjQuery and plugins
 
 The code uses [jQuery Library](https://jquery.com/) as well as [Smooth Scroll PlugIn](https://plugins.jquery.com/smooth-scroll/) and [printThis](https://jasonday.github.io/printThis/) plugins.
 

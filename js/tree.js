@@ -8,7 +8,6 @@ const drawTree = function() {
     return totalNodes + nodeInChildren.children.length;
   }, 0);
   const addHeight = dataNodes > 30 ? (dataNodes - 30) * 20 : 0;
-  console.log(addHeight);
   //   removes any existing svg
   d3.select("svg").remove();
   //get canvas height
