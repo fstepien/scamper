@@ -93,9 +93,11 @@ There are many similarities in writting jQuery and D3, making it simple to apply
 
 ### A11y
 
-+ Skip Links on first tab and after each input field ` class="skip-link"`
+
 + All buttons include aria-labels `aria-label="Submit substitute idea"`
 + All inputs have hidden labels `<label class="visuallyhidden">`
++ Skip Links on first tab and after each input field ` class="skip-link"`
++ Add .focus() on next input using skip links, setTimeout so that function does not return before smooth scroll is run
 
 ### jQuery and plugins
 
