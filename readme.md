@@ -97,7 +97,7 @@ There are many similarities in writting jQuery and D3, making it simple to apply
 + All buttons include aria-labels `aria-label="Submit substitute idea"`
 + All inputs have hidden labels `<label class="visuallyhidden">`
 
-### sjQuery and plugins
+### jQuery and plugins
 
 The code uses [jQuery Library](https://jquery.com/) as well as [Smooth Scroll PlugIn](https://plugins.jquery.com/smooth-scroll/) and [printThis](https://jasonday.github.io/printThis/) plugins.
 

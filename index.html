@@ -36,7 +36,7 @@
 </head>
 
 <body>
-    <a href="#section-s" class="skip-link">Skip to Substitute Section</a>
+    <a href="#section-s" data-section="substitute" class="skip-link">Skip to Substitute Section</a>
     <header class="main-header">
         <div class="main-header__title">
             <img class="main-header__title__img" src="assets/artificial-intelligence.svg" alt="brain made up of nodes to represent idea points">
@@ -66,7 +66,7 @@
                 </button>
 
             </form>
-            <a href="#section-c" class="skip-link">Skip to Combine</a>
+            <a href="#section-c" data-section="combine" class="skip-link">Skip to Combine</a>
         </div>
 
         <ul data-section="list-substitute" class="section__ideas section__ideas--s wrap60">
@@ -93,7 +93,7 @@
                 </button>
 
             </form>
-            <a href="#section-a" class="skip-link">Skip to Adapt</a>
+            <a href="#section-a" data-section="adapt" class="skip-link">Skip to Adapt</a>
         </div>
 
         <ul data-section="list-combine" class="section__ideas section__ideas--c wrap60">
@@ -121,7 +121,7 @@
                 </button>
 
             </form>
-            <a href="#section-m" class="skip-link">Skip to Modify</a>
+            <a href="#section-m" data-section="modify" class="skip-link">Skip to Modify</a>
         </div>
 
         <ul data-section="list-adapt" class="section__ideas section__ideas--c wrap60">
@@ -148,7 +148,7 @@
                 </button>
 
             </form>
-            <a href="#section-p" class="skip-link">Skip to Put to other use section</a>
+            <a href="#section-p" data-section="put" class="skip-link">Skip to Put to other use section</a>
         </div>
 
         <ul data-section="list-modify" class="section__ideas section__ideas--m wrap60">
@@ -175,7 +175,7 @@
                 </button>
 
             </form>
-            <a href="#section-e" class="skip-link">Skip to Eliminate</a>
+            <a href="#section-e" data-section="eliminate" class="skip-link">Skip to Eliminate</a>
         </div>
 
         <ul data-section="list-put" class="section__ideas section__ideas--p wrap60">
@@ -202,7 +202,7 @@
                 </button>
 
             </form>
-            <a href="#section-r" class="skip-link">Skip to Rearrange</a>
+            <a href="#section-r" data-section="rearrange" class="skip-link">Skip to Rearrange</a>
         </div>
 
         <ul data-section="list-eliminate" class="section__ideas section__ideas--p wrap60">
@@ -229,7 +229,7 @@
                 </button>
 
             </form>
-            <a href="#tree-diagram" class="skip-link">Finish, this will draw out a tree diagram</a>
+            <a href="#tree-diagram" class="skip-link draw-tree" data-section="rearrange">Finish, this will draw out a tree diagram</a>
         </div>
 
         <ul data-section="list-rearrange" class="section__ideas section__ideas--p wrap60">
@@ -250,6 +250,10 @@
         </div>
     </section>
     <section class="utilities">
+        <button class="print a-tag utilities__button" aria-label="print tree diagram">
+            <img src="assets/printer.svg" alt="printer icon">
+
+        </button>
         <button class="info a-tag utilities__button" aria-label="Toggle Info Modal Open/Close">
             <img src="assets/info.svg" alt="info icon">
         </button>
@@ -260,10 +264,7 @@
             <img src="assets/garbage.svg" alt="garbage can icon">
 
         </button>
-        <button class="print a-tag utilities__button" aria-label="print tree diagram">
-            <img src="assets/printer.svg" alt="printer icon">
 
-        </button>
     </section>
     <aside class="info-pop">
         <div class="info-pop__head">

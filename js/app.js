@@ -195,8 +195,14 @@ $(function() {
         }
       }
       const nextSection = $(this).attr("href");
+
       if (/^#section/.test(nextSection)) {
         $(nextSection).css("display", "flex");
+        $(this).hasClass("skip-link")
+          ? setTimeout(() => {
+              $(`input[name=${currentSection}]`).focus();
+            }, 1000)
+          : "";
       }
     })
     .smoothScroll({
