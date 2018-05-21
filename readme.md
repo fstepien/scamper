@@ -83,7 +83,7 @@ fetch("js/data.json")
 
 
 
-There are many similarities in writting jQuery and D3, making it simple to apply powerful visualization functions. I recommend the following resources to get started: 
+There are many similarities in writing jQuery and D3, making it simple to apply powerful visualization functions. I recommend the following resources to get started: 
 + [d3 API reference page](https://github.com/d3/d3/blob/master/API.md)
 + [d3Vienno (YouTube)](https://www.youtube.com/user/d3Vienno)
 + [*D3 Tips and Tricks v3.x* by Macolm Maclean (Leanpub)](https://leanpub.com/D3-Tips-and-Tricks)
@@ -107,20 +107,20 @@ Smooth Scroll allows for smooth transition between sections with only the follow
 ```
   .smoothScroll({ speed: 900 });
 ```
-Similary, printThis requires very little code to be written to print a selected element: 
+Similarly, printThis requires very little code to be written to print a selected element: 
 ```
 $('selector').printThis();
 ```
 ### Displaying, scaling and printing d3 / SVG elements
 
-d3 maps out all of the node coordinaes and draws the tree diagram on the canvas. I thought this would be a challenge when creating a responsive website and it would require a LOT of media queries. However, after doing some research research d3 creates the tree diagram as SVG which can be responsively scaled. This took some trial and error, but after getting familiar how each element is rendered the following steps can be taken once: 
+he D3.js library provided the perfect solution providing powerful visualization function and responsive scaling that transitioned well onto mobile. It did all the hard work of mapping out all of the node coordinates and plotting the tree diagram on the canvas. These node positions were set using pixels and, initially, I thought media queries would be required to scale down the image. However, after doing some research d3 creates the tree diagram as a SVG which can be responsively scaled based on window width. This took some trial and error, but after familiarizing myself with how each element is rendered I found the following steps can be taken to create a responsive d3 diagram :
 
 1. Display the tree diagram at a the height/width ratio and size that fits the largest screen that needs to be supported. A couple key things that I learned: 
 ```const tree = d3.layout.tree().size([height, width]);```
 
-+ The width in the following code only takes into concideration the nodes and diagonal paths and text will overflow out of it. So it should be 1/4 - 1/3 of your cavans. 
++ The width in the following code only takes into consideration the nodes and diagonal paths and text will overflow out of it. So it should be 1/4 - 1/3 of your canvas. 
 + The height and width will set the ratio which is maintained during scaling.
-+ Initially, the hight shoud be a little smaller than the canvas so all the ndoes fit nicely on the screen.  
++ Initially, the height should be a little smaller than the canvas so all the nodes fit nicely on the screen.  
 
 2. Preserve Aspect Ratio then set SVG scaling using the view-box attribute. The first two numbers assign scaling coordinates, the latter two set height/width scale factor. 
 
@@ -131,7 +131,7 @@ d3 maps out all of the node coordinaes and draws the tree diagram on the canvas.
 
 [Shawn Allen's answer in Regards to Responsive d3 / SVG on StackOverflow](https://stackoverflow.com/a/9539361/9160384)
 
-3. Adjust for printing: The intial tree diagram is fairly large on screen, but it is ideal for printing on a letter page size. The large viewBox factors allow for scaling all the way down to mobile, with the ability to print or send a letter size pdf. Thanks to the set height in step one the nodes are nicely distributed. However, an issue arrises if too many ideas are entered into the text field: The ideas start compressing down at 30 nodes, and start overlapping at 50. Therefore, an extra 20px was added to the height starting withthe 31st node. 
+3. Adjust for printing: The initial tree diagram is fairly large on screen, but it is ideal for printing on a letter page size. The large viewBox factors allow for scaling all the way down to mobile, with the ability to print or send a letter size pdf. Thanks to the set height in step one the nodes are nicely distributed. However, an issue arises if too many “ideas” are entered into the text field: The “ideas” start compressing down at 30 nodes, and start overlapping at 50. Therefore, an extra 20px was added to the height each time a new idea is entered starting with the 31st node. 
 
 ```
 // calculate the number of nodes 
