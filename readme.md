@@ -3,6 +3,7 @@ SCAMPER
 
 [https://scamper.filipstepien.com](https://scamper.filipstepien.com)
 
+
 A brainstorming tool to improve a product, service or an idea by asking guided questions on how to Substitute, Combine, Adapt, Modify, Put to other uses, Eliminate, Rearrange. 
 
 This app stores "ideas" in local storage and applies visualization using the [d3.js library](https://d3js.org/). This library requires a specific data structure, therefore after the initial HTML markup the next step was to create an organizational structure to store input values. 
@@ -113,6 +114,8 @@ $('selector').printThis();
 ```
 ### Displaying, scaling and printing d3 / SVG elements
 
+[My blog post: How to scale a D3.js SVG tree Diagram (Medium)](https://medium.com/@filip.stepien/how-to-scale-a-d3-js-svg-tree-diagram-a7e89b9eebff)
+
 he D3.js library provided the perfect solution providing powerful visualization function and responsive scaling that transitioned well onto mobile. It did all the hard work of mapping out all of the node coordinates and plotting the tree diagram on the canvas. These node positions were set using pixels and, initially, I thought media queries would be required to scale down the image. However, after doing some research d3 creates the tree diagram as a SVG which can be responsively scaled based on window width. This took some trial and error, but after familiarizing myself with how each element is rendered I found the following steps can be taken to create a responsive d3 diagram :
 
 1. Display the tree diagram at a the height/width ratio and size that fits the largest screen that needs to be supported. A couple key things that I learned: 
@@ -153,9 +156,15 @@ he D3.js library provided the perfect solution providing powerful visualization 
   const tree = d3.layout.tree().size([canvasHeight, 320]);
 ```
 
-![](https://scamper.filipstepien.com/assets/index.png)
+The end result is a scalable tree diagram that prints on desktop and mobile devices.
 
 ![](https://scamper.filipstepien.com/assets/index.print.png)
+
+#### Initial Sketch to Final Design
+
+![](https://meta.filipstepien.com/scamper.notes.jpg)
+
+![](https://scamper.filipstepien.com/assets/index.png)
 
 
 
