@@ -100,6 +100,8 @@ There are many similarities in writing jQuery and D3, making it simple to apply 
 + Skip Links on first tab and after each input field ` class="skip-link"`
 + Add .focus() on next input using skip links, setTimeout so that function does not return before smooth scroll is run
 
+![](https://meta.filipstepien.com/scamper.axe.png)
+
 ### jQuery and plugins
 
 The code uses [jQuery Library](https://jquery.com/) as well as [Smooth Scroll PlugIn](https://plugins.jquery.com/smooth-scroll/) and [printThis](https://jasonday.github.io/printThis/) plugins.
