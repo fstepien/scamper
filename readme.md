@@ -2,6 +2,7 @@ SCAMPER
 =======
 
 [https://scamper.filipstepien.com](https://scamper.filipstepien.com)
+[My blog post: How to scale a D3.js SVG tree Diagram (Medium)](https://medium.com/@filip.stepien/how-to-scale-a-d3-js-svg-tree-diagram-a7e89b9eebff)
 
 
 A brainstorming tool to improve a product, service or an idea by asking guided questions on how to Substitute, Combine, Adapt, Modify, Put to other uses, Eliminate, Rearrange. 
